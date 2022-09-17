@@ -1,0 +1,53 @@
+@import "./fonts.css";
+
+:root {
+  /* layout */
+  --desktop-width: 1366px;
+  --mobile-width: 375px;
+
+  /*colors*/
+  --scissors-gradient-1: hsl(39, 89%, 49%);
+  --scissors-gradient-2: hsl(40, 84%, 53%);
+
+  --paper-gradient-1: hsl(230, 89%, 62%);
+  --paper-gradient-2: hsl(230, 89%, 65%);
+
+  --rock-gradient-1: hsl(349, 71%, 52%);
+  --rock-gradient-2: hsl(349, 70%, 56%);
+
+  --lizard-gradient-1: hsl(261, 73%, 60%);
+  --lizard-gradient-2: hsl(261, 72%, 63%);
+
+  --cyan-gradient-1: hsl(189, 59%, 53%);
+  --cyan-gradient-2: hsl(189, 58%, 57%);
+
+  --main-bg-gradient-1: hsl(214, 47%, 23%);
+  --main-bg-gradient-2: hsl(237, 49%, 15%);
+
+  /*  fonts */
+  --main-font-family: Barlow, serif;
+  --font-weight-bold: 600;
+  --font-weight-bolder: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  /*color: var(--color-text);*/
+  /*background: var(--color-background);*/
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: var(--main-font-family);
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
