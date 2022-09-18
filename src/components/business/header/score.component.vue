@@ -1,19 +1,19 @@
 <template>
-<div class="score-container">
-  <div class="score-container__title">Score</div>
-  <div class="score-container__value">{{ scoreStore.score }}</div>
-</div>
+  <div class="score-container">
+    <div class="score-container__title">Score</div>
+    <div class="score-container__value">{{ scoreStore.score }}</div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { useScoreStore } from '../../../store/ScoreStore'
+import { useScoreStore } from "../../../store/ScoreStore";
 
-const scoreStore = useScoreStore()
+const scoreStore = useScoreStore();
 </script>
 
 <style scoped>
-.score-container{
-  border-radius: 10px;
+.score-container {
+  border-radius: var(--global-border-radius);
   background-color: #fdfdfd;
   height: 8rem;
   width: 10rem;
@@ -22,7 +22,7 @@ const scoreStore = useScoreStore()
   align-items: center;
 }
 
-.score-container__title{
+.score-container__title {
   text-transform: lowercase;
   color: #4053c5;
   font-size: 1.1rem;
@@ -30,7 +30,7 @@ const scoreStore = useScoreStore()
   letter-spacing: 0.1rem;
 }
 
-.score-container__value{
+.score-container__value {
   color: #59556e;
   font-weight: var(--font-weight-bolder);
   font-size: 4rem;

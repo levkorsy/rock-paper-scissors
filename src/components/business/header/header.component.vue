@@ -24,7 +24,7 @@ const displayItem: Array<GameItemModel> = getGameItems(false)
   border: 2px #5f6f89 solid;
   display: flex;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: var(--global-border-radius);
   width: 50%;
   justify-content: space-between;
 }
