@@ -1,15 +1,29 @@
-<script setup lang="ts">
-import HeaderComponent from "@/components/business/header/header.component.vue";
-import RulesComponent from "@/components/business/rules/rules.component.vue";
-</script>
-
 <template>
   <main class="main-container">
     <header-component/>
     <div style="flex: 2">dice</div>
-    <rules-component/>
+    <custom-btn-component 
+        class="rules-container" 
+        secondary
+        @btn-click="showRules">
+        Rules
+    </custom-btn-component> 
+    <rules-modal-component v-if="isShowRules"/>
   </main>
 </template>
+<script setup lang="ts">
+  import { ref } from "vue";
+  import CustomBtnComponent from "@/components/ui/custom-btn.component.vue";
+  import RulesModalComponent from "@/components/business/rules/rules-modal.component.vue";
+import HeaderComponent from "@/components/business/header/header.component.vue";
+import RulesComponent from "@/components/business/rules/rules.component.vue";
+
+const isShowRules = ref<boolean>(false)
+
+const showRules = () => {
+    isShowRules.value = !isShowRules.value
+}
+</script>
 
 <style>
 .main-container {
@@ -23,5 +37,8 @@ import RulesComponent from "@/components/business/rules/rules.component.vue";
   width: 100vw;
   height: 100vh;
   padding: 2rem;
+}
+.rules-container {
+  align-self: flex-end;
 }
 </style>
