@@ -7,3 +7,8 @@ export interface GameItemModel {
 }
 
 export type GameItemType = 'PAPER' | 'ROCK' | 'SCISSORS' | 'LIZARD' | 'SPOCK'
+
+export enum GameStepsEnum {
+    SELECT = 'select',
+    RESULT = 'result',
+  }
