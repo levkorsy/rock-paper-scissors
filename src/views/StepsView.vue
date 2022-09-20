@@ -25,5 +25,6 @@ const gameStore = useGameStore();
 <style>
     .steps-container{
         flex: 2;
+        width: 50%;
     }
 </style>

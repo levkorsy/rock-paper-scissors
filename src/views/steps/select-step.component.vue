@@ -1,16 +1,26 @@
 <template>
     <div class="game-items">
         <div class="game-items__first">
-            <div>1</div>
-            <div>2</div>
+            <div>
+                <game-item-component :item="gameItems[0]"/>
+            </div>
+            <div>
+                <game-item-component :item="gameItems[1]"/>
+            </div>
         </div>
         <div class="game-items__second">
-            <div>3</div>
+            <div>
+                <game-item-component :item="gameItems[2]"/>
+                <!-- TODO refactor it for bonus -->
+            </div>
         </div>
     </div>
 </template>
 <script setup lang="ts">
+import GameItemComponent from "@/components/business/game-item.component.vue";
+import { getGameItems } from "@/shared/game-items/game-items.helper";
 
+const gameItems = getGameItems()
 </script>
   
 <style>
@@ -24,7 +34,7 @@
         justify-content: space-between;
     }
 
-    .game-items__first{
+    .game-items__second{
         display: flex;
         justify-content: center;
     }
