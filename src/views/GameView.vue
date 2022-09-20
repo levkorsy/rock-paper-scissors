@@ -1,7 +1,7 @@
 <template>
   <main class="main-container">
     <header-component />
-    <StepsView />
+    <steps-view class="steps-container"/>
     <custom-btn-component class="rules-container" secondary @btn-click="showRules">
       Rules
     </custom-btn-component>
@@ -32,6 +32,10 @@ const showRules = () => {
   width: 100vw;
   height: 100vh;
   padding: 2rem;
+}
+
+.steps-container{
+  margin-top: 10%;
 }
 
 .rules-container {

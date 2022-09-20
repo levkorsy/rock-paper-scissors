@@ -19,7 +19,7 @@ export const gameItemsStok: Array<GameItemModel> = [
             first: '--paper-gradient-1',
             last: '--paper-gradient-2'
         },
-        icon: 'icon-rock.svg'
+        icon: 'icon-paper.svg'
     },
     {
         title: 'Scissors',
