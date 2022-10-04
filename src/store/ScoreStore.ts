@@ -1,7 +1,7 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export const useScoreStore = defineStore('ScoreStore', {
-    state: () => ({
-       score: 0 
-    }),
-})
+export const useScoreStore = defineStore("ScoreStore", {
+  state: () => ({
+    score: 0,
+  }),
+});

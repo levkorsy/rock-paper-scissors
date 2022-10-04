@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { useScoreStore } from "../../../store/ScoreStore";
+import { useScoreStore } from "@/store/ScoreStore";
 
 const scoreStore = useScoreStore();
 </script>
@@ -14,7 +14,7 @@ const scoreStore = useScoreStore();
 <style scoped>
 .score-container {
   border-radius: var(--global-border-radius);
-  background-color: #fdfdfd;
+  background-color: var(--light-bg-color);
   height: 8rem;
   width: 10rem;
   display: flex;

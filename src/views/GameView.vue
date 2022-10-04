@@ -1,8 +1,12 @@
 <template>
   <main class="main-container">
     <header-component />
-    <steps-view class="steps-container"/>
-    <custom-btn-component class="rules-container" secondary @btn-click="showRules">
+    <steps-view class="steps-container" />
+    <custom-btn-component
+      class="rules-container"
+      secondary
+      @btn-click="showRules"
+    >
       Rules
     </custom-btn-component>
     <rules-modal-component v-if="isShowRules" />
@@ -15,17 +19,19 @@ import RulesModalComponent from "@/components/business/rules/rules-modal.compone
 import HeaderComponent from "@/components/business/header/header.component.vue";
 import StepsView from "@/views/StepsView.vue";
 
-const isShowRules = ref<boolean>(false)
+const isShowRules = ref<boolean>(false);
 
 const showRules = () => {
-  isShowRules.value = !isShowRules.value
-}
+  isShowRules.value = !isShowRules.value;
+};
 </script>
 
 <style>
 .main-container {
-  background-image: linear-gradient(var(--main-bg-gradient-1),
-      var(--main-bg-gradient-2));
+  background-image: linear-gradient(
+    var(--main-bg-gradient-1),
+    var(--main-bg-gradient-2)
+  );
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +40,7 @@ const showRules = () => {
   padding: 2rem;
 }
 
-.steps-container{
+.steps-container {
   margin-top: 10%;
 }
 

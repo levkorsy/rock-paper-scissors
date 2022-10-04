@@ -1,6 +1,8 @@
 import { gameItemsStok } from "@/shared/game-items/game-items-stock";
 import type { GameItemModel } from "@/shared/models/game-items.model";
 
-export const getGameItems = ( bonusMode: boolean = false): Array<GameItemModel> => {
-    return gameItemsStok.filter( item => item.bonus === bonusMode )
-}
+export const getGameItems = (
+  bonusMode: boolean = false
+): Array<GameItemModel> => {
+  return gameItemsStok.filter((item) => item.bonus === bonusMode);
+};

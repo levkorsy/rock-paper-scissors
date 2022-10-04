@@ -1,4 +1,4 @@
 export enum GameStepsEnum {
-    SELECT = 'select',
-    RESULT = 'result',
-  }
+  SELECT = "select",
+  RESULT = "result",
+}

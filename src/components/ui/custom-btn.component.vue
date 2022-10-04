@@ -1,17 +1,21 @@
 <template>
   <div>
-    <button class="custom-btn" :class="{ 'secondary': secondary  }" role="button" @click="emit('btn-click')">
+    <button
+      class="custom-btn"
+      :class="{ secondary: props.secondary }"
+      role="button"
+      @click="emit('btn-click')"
+    >
       <slot></slot>
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-const props = 
-  defineProps<{
-    secondary: boolean;
-  }>();
-  const emit = defineEmits(['btn-click'])
+const props = defineProps<{
+  secondary: boolean;
+}>();
+const emit = defineEmits(["btn-click"]);
 </script>
 
 <style scoped>
@@ -46,13 +50,12 @@ const props =
   border: 1px solid var(--rules-btn-color);
 }
 
-
 .custom-btn.secondary:hover,
 .custom-btn.secondary:focus {
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: var(--main-bg-gradient-1) 0 4px 12px;
   background-color: var(--rules-btn-color);
-  color: var(--main-bg-gradient-1)
+  color: var(--main-bg-gradient-1);
 }
 
 .custom-btn.secondary:active {

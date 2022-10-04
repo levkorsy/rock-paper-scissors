@@ -1,9 +1,9 @@
 export interface GameItemModel {
-    title: string
-    type: GameItemType
-    bonus: boolean,
-    color: { first: string, last: string },
-    icon: string
+  title: string;
+  type: GameItemType;
+  bonus: boolean;
+  color: { first: string; last: string };
+  icon: string;
 }
 
-export type GameItemType = 'PAPER' | 'ROCK' | 'SCISSORS' | 'LIZARD' | 'SPOCK'
+export type GameItemType = "PAPER" | "ROCK" | "SCISSORS" | "LIZARD" | "SPOCK";
