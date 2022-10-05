@@ -1,14 +1,14 @@
 <template>
   <div class="score-container">
     <div class="score-container__title">Score</div>
-    <div class="score-container__value">{{ scoreStore.score }}</div>
+    <div class="score-container__value">{{ gameStore.score }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useScoreStore } from "@/store/ScoreStore";
+import { useGameStore } from "@/store/GameStore";
 
-const scoreStore = useScoreStore();
+const gameStore = useGameStore();
 </script>
 
 <style scoped>

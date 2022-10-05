@@ -20,7 +20,7 @@ const emit = defineEmits(["btn-click"]);
 
 <style scoped>
 .custom-btn {
-  color: var(--rules-btn-color);
+  color: var(--main-bg-gradient-1);
   border: 1px solid var(--rules-btn-color);
   border-radius: var(--global-border-radius);
   width: 8rem;
@@ -45,7 +45,7 @@ const emit = defineEmits(["btn-click"]);
 }
 
 .custom-btn.secondary {
-  color: var(--rules-btn-color);
+  color: var(--rules-btn-color-secondary);
   background: inherit;
   border: 1px solid var(--rules-btn-color);
 }

@@ -10,6 +10,7 @@ export const gameItemsStok: Array<GameItemModel> = [
       last: "--rock-gradient-2",
     },
     icon: "icon-rock.svg",
+    beats:['SCISSORS'],
   },
   {
     title: "Paper",
@@ -20,6 +21,7 @@ export const gameItemsStok: Array<GameItemModel> = [
       last: "--paper-gradient-2",
     },
     icon: "icon-paper.svg",
+    beats:['ROCK'],
   },
   {
     title: "Scissors",
@@ -30,6 +32,7 @@ export const gameItemsStok: Array<GameItemModel> = [
       last: "--scissors-gradient-2",
     },
     icon: "icon-scissors.svg",
+    beats:['PAPER'],
   },
   {
     title: "Lizard",
@@ -40,6 +43,7 @@ export const gameItemsStok: Array<GameItemModel> = [
       last: "--lizard-gradient-2",
     },
     icon: "icon-lizard.svg",
+    beats:['PAPER'],
   },
   {
     title: "Spock",
@@ -50,5 +54,6 @@ export const gameItemsStok: Array<GameItemModel> = [
       last: "--spock-gradient-2",
     },
     icon: "icon-spock.svg",
+    beats:['PAPER'],
   },
 ];

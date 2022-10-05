@@ -1,6 +1,8 @@
 <template>
-  <div v-if="item"
+  <div
+    v-if="item"
     class="game-item"
+    :class="{ 'game-item__disabled': disabled }"
     :style="{ borderColor: `var(${item.color.first})` }"
     @click="emit('select-item', item)"
   >
@@ -18,7 +20,7 @@ import CustomIconComponent from "../ui/custom-icon.component.vue";
 
 defineProps<{
   item: GameItemModel;
-  active: boolean
+  disabled: boolean;
 }>();
 
 const emit = defineEmits(["select-item"]);
@@ -45,7 +47,11 @@ const emit = defineEmits(["select-item"]);
   pointer-events: none;
 }
 
-.game-item.active:hover {
+.game-item__disabled{
+  pointer-events: none;
+}
+
+.game-item:hover {
   cursor: pointer;
   opacity: 1;
   transform: scale(1.1);
