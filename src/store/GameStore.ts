@@ -49,30 +49,35 @@ export const useGameStore = defineStore("GameStore", {
     },
 
     setResult(userSelection: GameItemModel, aiSelection: GameItemModel) {
-      if (!userSelection && !aiSelection){
+      if (!userSelection && !aiSelection) {
         return;
       }
 
       let result = 0;
 
-      if(userSelection.type !== aiSelection.type) {
-        result = userSelection.beats.includes(aiSelection.type) ? 1 : -1
+      if (userSelection.type !== aiSelection.type) {
+        result = userSelection.beats.includes(aiSelection.type) ? 1 : -1;
 
-        this.winner = userSelection.beats.includes(aiSelection.type) ? 'user' : 'ai'
+        this.winner = userSelection.beats.includes(aiSelection.type)
+          ? "user"
+          : "ai";
       }
 
-      this.score += result
-
-
+      this.score += result;
     },
 
-    playAgain(){
-      this.winner = null
-      this.activeStep = GameStepsEnum.SELECT
-      this.selectedItems = { user: null, ai: null }
+    playAgain() {
+      this.winner = null;
+      this.activeStep = GameStepsEnum.SELECT;
+      this.selectedItems = { user: null, ai: null };
+    },
+
+    resetGame() {
+      this.playAgain();
+      this.score = 0;
     }
   },
   persist: {
-    enabled: true
-  }
+    enabled: true,
+  },
 });

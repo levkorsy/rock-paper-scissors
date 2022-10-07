@@ -3,7 +3,6 @@
     <div class="play-again__winner"> {{winnerTitle }}</div>
     <div>
       <custom-btn-component
-          class="rules-container"
           @btn-click="gameStore.playAgain"
       >
         Play again
@@ -22,6 +21,12 @@ const winnerTitle = computed((): string => { return gameStore.winner === 'user' 
 </script>
 
 <style>
+.play-again-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .play-again__winner {
   text-transform: uppercase;
   color: white;
