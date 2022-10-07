@@ -72,4 +72,7 @@ export const useGameStore = defineStore("GameStore", {
       this.selectedItems = { user: null, ai: null }
     }
   },
+  persist: {
+    enabled: true
+  }
 });
