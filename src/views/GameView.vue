@@ -1,7 +1,9 @@
 <template>
   <main class="main-container">
     <header-component />
+
     <steps-view class="steps-container" />
+
     <div class="rules-container">
       <custom-btn-component
           class="reset-btn"
@@ -9,16 +11,20 @@
       >
         <span class="reset-btn__icon">&#x21bb;</span>
       </custom-btn-component>
+
       <custom-btn-component
-          class="rules-container"
-          secondary
-          @btn-click="showRules"
+        class="rules-container"
+        secondary
+        @btn-click="showRules"
       >
         Rules
       </custom-btn-component>
     </div>
 
-    <rules-modal-component v-if="isShowRules" />
+    <rules-modal-component
+        v-if="isShowRules"
+        @close-modal="isShowRules = false"
+    />
   </main>
 </template>
 <script setup lang="ts">
@@ -27,7 +33,7 @@ import CustomBtnComponent from "@/components/ui/custom-btn.component.vue";
 import RulesModalComponent from "@/components/business/rules/rules-modal.component.vue";
 import HeaderComponent from "@/components/business/header/header.component.vue";
 import StepsView from "@/views/StepsView.vue";
-import {useGameStore} from '@/store/GameStore'
+import { useGameStore } from "@/store/GameStore";
 
 const gameStore = useGameStore();
 
@@ -62,10 +68,11 @@ const showRules = () => {
   align-self: flex-end;
 }
 
-.reset-btn__icon{
-font-size: 2em}
+.reset-btn__icon {
+  font-size: 2em;
+}
 
-.rules-container .reset-btn .custom-btn{
+.rules-container .reset-btn .custom-btn {
   width: 40px;
   margin-inline-end: 1em;
 }

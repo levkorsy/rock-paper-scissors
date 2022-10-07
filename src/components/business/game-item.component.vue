@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="item"
-    class="game-item"
+    class="game-item winner"
     :class="{ 'game-item__disabled': disabled }"
     :style="{ borderColor: `var(${item.color.first})` }"
     @click="emit('select-item', item)"
@@ -57,5 +57,47 @@ const emit = defineEmits(["select-item"]);
   transform: scale(1.1);
 }
 
-/*    // TODO add gradient to the border*/
+.game-item.winner{
+  position: relative;
+  --col1: #2b3858;
+  --col2: #263554;
+  --col3: #223351;
+}
+
+.game-item.winner::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: radial-gradient(var(--col1) 13em 16em, var(--col2) 16em 19em, var(--col3) 19em 21em);
+  animation: ripple 4s linear 1;
+  animation-fill-mode: forwards;
+  border-radius: 50%;
+  z-index: -2 ;
+}
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 13em;
+    height: 13em;
+  }
+}
+
+.game-item.winner::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  /*background-color: #303030;*/
+  z-index: -2;
+}
 </style>

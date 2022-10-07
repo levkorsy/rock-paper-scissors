@@ -12,9 +12,14 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
-  secondary: boolean;
-}>();
+type Props = {
+  secondary?: boolean;
+};
+
+const props = withDefaults(defineProps<Props>(), {
+  secondary: false,
+});
+
 const emit = defineEmits(["btn-click"]);
 </script>
 
