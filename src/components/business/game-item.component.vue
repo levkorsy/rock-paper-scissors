@@ -1,8 +1,8 @@
 <template>
   <div
     v-if="item"
-    class="game-item winner"
-    :class="{ 'game-item__disabled': disabled }"
+    class="game-item"
+    :class="{ 'game-item__disabled': disabled, winner: winner }"
     :style="{ borderColor: `var(${item.color.first})` }"
     @click="emit('select-item', item)"
   >
@@ -21,6 +21,7 @@ import CustomIconComponent from "../ui/custom-icon.component.vue";
 defineProps<{
   item: GameItemModel;
   disabled: boolean;
+  winner: boolean;
 }>();
 
 const emit = defineEmits(["select-item"]);
@@ -40,14 +41,14 @@ const emit = defineEmits(["select-item"]);
   transition: all 0.1s ease-in-out;
 }
 
-.game-item__empty{
+.game-item__empty {
   background-color: #16213d;
   opacity: 1;
   border: none;
   pointer-events: none;
 }
 
-.game-item__disabled{
+.game-item__disabled {
   pointer-events: none;
 }
 
@@ -57,47 +58,19 @@ const emit = defineEmits(["select-item"]);
   transform: scale(1.1);
 }
 
-.game-item.winner{
-  position: relative;
-  --col1: #2b3858;
-  --col2: #263554;
-  --col3: #223351;
+.game-item.winner {
+  animation: ripple 0.6s linear infinite;
 }
-
-.game-item.winner::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-image: radial-gradient(var(--col1) 13em 16em, var(--col2) 16em 19em, var(--col3) 19em 21em);
-  animation: ripple 4s linear 1;
-  animation-fill-mode: forwards;
-  border-radius: 50%;
-  z-index: -2 ;
-}
-
+/* ripple effect */
 @keyframes ripple {
   0% {
-    width: 0;
-    height: 0;
+    box-shadow: 0 0 0 0 rgba(43, 56, 88, 0.4), 0 0 0 20px rgba(43, 56, 88, 0.4),
+      0 0 0 40px rgba(43, 56, 88, 0.4), 0 0 0 60px rgba(43, 56, 88, 0.4);
   }
   100% {
-    width: 13em;
-    height: 13em;
+    box-shadow: 0 0 0 20px rgba(43, 56, 88, 0.4),
+      0 0 0 40px rgba(43, 56, 88, 0.5), 0 0 0 60px rgba(43, 56, 88, 0.4),
+      0 0 0 80px rgba(43, 56, 88, 0);
   }
-}
-
-.game-item.winner::before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  /*background-color: #303030;*/
-  z-index: -2;
 }
 </style>

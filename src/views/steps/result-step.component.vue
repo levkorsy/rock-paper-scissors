@@ -1,13 +1,13 @@
 <template>
   <div class="result-game-items">
     <div class="result-game-item__user">
-      <game-item-component disabled :item="gameStore.selectedItems.user" />
+      <game-item-component disabled :item="gameStore.selectedItems.user" :winner="gameStore.winner === 'user'"/>
     </div>
     <div class="result-game">
       <play-again-component />
     </div>
     <div class="result-game-item__ai">
-      <game-item-component disabled :item="gameStore.selectedItems.ai" />
+      <game-item-component disabled :item="gameStore.selectedItems.ai" :winner="gameStore.winner === 'ai'"/>
     </div>
   </div>
 </template>
